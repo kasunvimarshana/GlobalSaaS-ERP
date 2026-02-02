@@ -1,0 +1,48 @@
+# Root .gitignore for GlobalSaaS-ERP
+
+# Backend (Laravel)
+/backend/vendor/
+/backend/node_modules/
+/backend/.env
+/backend/.env.backup
+/backend/.phpunit.result.cache
+/backend/Homestead.json
+/backend/Homestead.yaml
+/backend/npm-debug.log
+/backend/yarn-error.log
+/backend/.idea
+/backend/.vscode
+/backend/.fleet
+/backend/.phpstorm.meta.php
+/backend/_ide_helper.php
+/backend/_ide_helper_models.php
+/backend/.phpactor.json
+/backend/storage/*.key
+/backend/.DS_Store
+/backend/database/database.sqlite
+
+# Frontend (Vue.js)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+/frontend/.DS_Store
+
+# Temporary files
+/tmp/
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
