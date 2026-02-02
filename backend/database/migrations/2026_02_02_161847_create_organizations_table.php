@@ -13,7 +13,27 @@ return new class extends Migration
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tenant_id')->constrained('tenants')->onDelete('cascade');
+            $table->string('name');
+            $table->string('code')->unique();
+            $table->string('type')->nullable(); // vendor, customer, internal
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->text('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('tax_id')->nullable();
+            $table->string('registration_number')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->json('settings')->nullable();
+            $table->json('metadata')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            
+            $table->index(['tenant_id', 'code']);
         });
     }
 
